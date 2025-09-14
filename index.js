@@ -30,7 +30,7 @@ app.get('/api/:date?', (req, res) => {
   const errMsg = { error: "Invalid Date"};
   const date = (/^\d+$/.test(dateParam)) ? new Date(parseInt(dateParam)) : new Date(dateParam);
 
-  if(date.toString() === errMsg)
+  if(date.toString() === "Invalid Date")
     return  res.json(errMsg);
 
   if(!dateParam)
